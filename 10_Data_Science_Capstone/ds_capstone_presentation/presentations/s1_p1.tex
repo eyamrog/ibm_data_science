@@ -31,11 +31,24 @@
 }
 
 \begin{frame}{Methodology}
-
+    \framesubtitle{Executive Summary}
+    \begin{itemize}
+        \item Data collection methodology
+            \begin{itemize}
+                \item Data about rocket launches was obtained from a SpaceX API and web scraping Wikipedia pages
+            \end{itemize}
+        \item Perform data wrangling
+            \begin{itemize}
+                \item Missing data was handled and a preliminary Exploratory Data Analysis was performed and the variable \texttt{Outcome Class} was defined for training the supervised models
+            \end{itemize}
+        \item Perform Exploratory Data Analysis (EDA) using visualisation and SQL
+        \item Perform interactive visual analysis using Folium and Plotly Dash
+        \item Perform predictive analysis using classification models
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Data Collection}
-
+    \import{diagrams/}{data_collection}
 \end{frame}
 
 \begin{frame}{Data Collection -- SpaceX API}
