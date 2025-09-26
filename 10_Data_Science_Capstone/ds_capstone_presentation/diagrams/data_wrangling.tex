@@ -1,0 +1,20 @@
+\begin{figure}[htbp]
+    \centering
+    \captionsetup{justification = raggedright, singlelinecheck = false}
+    \label{fig:data_collection}
+    \begin{tikzpicture}[
+        node distance=12mm,
+        box/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=8mm, fill=blue!5},
+        endpoint/.style={draw, rounded corners, align=center, minimum width=5.2cm, minimum height=8mm, fill=green!8, thick},
+        arrow/.style={-latex, thick, draw=black}
+    ]
+        \node[endpoint] (data_wrangling) {Data Wrangling};
+        \node[box, below=of data_wrangling] (missing_data) {Missing data handling};
+        \node[box, below=of missing_data] (pre_eda) {Preliminary EDA};
+        \node[box, below=of pre_eda] (outcome_class) {Outcome Class variable};
+
+        \path[arrow] (data_wrangling) -- (missing_data);
+        \path[arrow] (missing_data) -- (pre_eda);
+        \path[arrow] (pre_eda) -- (outcome_class);
+    \end{tikzpicture}
+\end{figure}
