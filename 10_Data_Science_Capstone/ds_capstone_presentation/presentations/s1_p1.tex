@@ -2,7 +2,7 @@
 \import{diagrams/}{cover}
 \begin{frame}
     \vspace{5cm}
-    \textcolor{white}{Rogério Yamada \\ 22 September 2025}
+    \textcolor{white}{Rogério Yamada \\ 26 September 2025}
 \end{frame}
 }
 
@@ -12,14 +12,72 @@
 
 \section{Executive Summary}
 
-\begin{frame}{Executive Summary}
-
+\begin{frame}[allowframebreaks]{Executive Summary}
+    \begin{itemize}
+        \item Objective: Predict and explain SpaceX Falcon 9 landing outcomes to inform cost and mission planning
+        \item Data: Combined SpaceX API and Wikipedia; cleaned and standardised key fields (payload, orbit, site, outcomes)
+        \item Methods: SQL for quick insights; visual EDA; Folium maps for geospatial context; Plotly Dash for interactive analysis; baseline classification models
+    \end{itemize}
+    \large Key Insights
+    \begin{itemize}
+        \item Success rates improve over time and with flight experience
+        \item Payload mass and orbit type relate to landing outcomes
+        \item Launch sites exhibit distinct success/failure profiles
+    \end{itemize}
+    \framebreak
+    \large Results
+    \begin{itemize}
+        \item Actionable EDA on sites, payloads, and orbits
+        \item Interactive dashboard for scenario exploration
+        \item Baseline models demonstrate predictive potential for landings
+    \end{itemize}
+    \large Business Value
+    \begin{itemize}
+        \item Better risk/cost estimation and mission planning
+        \item Data-driven selection of payload/orbit/site combinations
+    \end{itemize}
+    \large Next Steps
+    \begin{itemize}
+        \item Enrich with weather/sea-state features and latest flights
+        \item Model tuning and deployment with live data refresh
+    \end{itemize}
 \end{frame}
 
 \section{Introduction}
 
-\begin{frame}{Introduction}
-
+\begin{frame}[allowframebreaks]{Introduction}
+    \large Context
+    \begin{itemize}
+        \item Falcon 9 reusability drives major cost savings; predicting landing outcomes informs mission economics
+    \end{itemize}
+    \large Problem
+    \begin{itemize}
+        \item What factors influence landing success, and can we predict outcomes ahead of launch?
+    \end{itemize}
+    \large Data Sources
+    \begin{itemize}
+        \item SpaceX REST API (launch, payload, rocket, launchpad)
+        \item Wikipedia launch records (historical details)
+    \end{itemize}
+    \large Approach
+    \begin{itemize}
+        \item Data wrangling and schema standardization
+        \item SQL queries and visual EDA to uncover patterns
+        \item Geospatial exploration with Folium
+        \item Interactive analytics with Plotly Dash
+        \item Baseline classification models for outcome prediction
+    \end{itemize}
+    \large Scope
+    \begin{itemize}
+        \item Falcon 9 missions through the available dataset window; focus on payload, orbit, site, and temporal trends
+    \end{itemize}
+    \large Deliverables
+    \begin{itemize}
+        \item Clean, analyzable dataset
+        \item Key insights and visualizations
+        \item Interactive dashboard
+        \item Initial predictive models and recommendations
+    \end{itemize}
 \end{frame}
 
 \section{Methodology}
@@ -375,25 +433,63 @@
 }
 
 \begin{frame}{Classification Accuracy}
-
+    \import{diagrams/}{classification_models_test_accuracy}
+    \begin{itemize}
+        \item There is a draw between the Logistic Regression, Support Vector Machine (SVM) and K Nearest Neighbours models
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Confusion Matrix}
-
+    \import{diagrams/}{log_reg_confusion_matrix}
+    \begin{itemize}
+        \item Logistic Regression confusion matrix
+    \end{itemize}
 \end{frame}
 
 \section{Conclusion}
 
-\begin{frame}{Conclusions}
+\begin{frame}[allowframebreaks]{Conclusions}
     \begin{itemize}
-        \item
+        \item We built a unified SpaceX launches dataset via API + web scraping and cleaned it for analysis
+        \item SQL and visual EDA revealed patterns: site- and orbit-specific success rates, payload/flight effects, and yearly improvement trends
+        \item Interactive Folium maps and a Plotly Dash app enabled exploratory insights by site, payload, and outcomes
+        \item Classification models provided baseline predictability for landing outcomes
+    \end{itemize}
+    \large Key Takeaways
+    \begin{itemize}
+        \item Landing success improves over time and with experience (flight count)
+        \item Payload mass and orbit type correlate with outcome patterns
+        \item Certain launch sites show distinct success/failure profiles.
+    \end{itemize}
+    \framebreak
+    \large Business Impact
+    \begin{itemize}
+        \item Better launch planning and risk estimation
+        \item Data-driven targeting of missions (payload/orbit/site combinations)
+        \item Foundation for cost optimization via landing outcome prediction.
+    \end{itemize}
+    \large Next Steps
+    \begin{itemize}
+        \item Incorporate weather and wind data for richer features
+        \item Expand to more recent missions and Starship data
+        \item Model tuning and feature engineering for higher accuracy
+        \item Deploy the dashboard with live data refresh.
     \end{itemize}
 \end{frame}
 
 \section{Appendix}
 
-\begin{frame}{Appendix}
+{
+\setbeamercolor{background canvas}{bg=blue}
+\begin{frame}[plain]
+    \LARGE
+    \centering
+    \textcolor{white}{Appendix}
+\end{frame}
+}
 
+\begin{frame}{Dashboard}
+    \import{diagrams/}{complete_dashboard}
 \end{frame}
 
 {
