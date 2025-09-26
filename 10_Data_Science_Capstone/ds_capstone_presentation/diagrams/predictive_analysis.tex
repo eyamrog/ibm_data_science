@@ -1,0 +1,22 @@
+\begin{figure}[htbp]
+    \centering
+    \captionsetup{justification = raggedright, singlelinecheck = false}
+    \label{fig:data_collection}
+    \begin{tikzpicture}[
+        node distance=12mm,
+        box/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=8mm, fill=blue!5},
+        endpoint/.style={draw, rounded corners, align=center, minimum width=5.2cm, minimum height=8mm, fill=green!8, thick},
+        arrow/.style={-latex, thick, draw=black}
+    ]
+        \node[endpoint] (predictive_analysis) {Predictive Analysis};
+        \node[box, above right=of predictive_analysis] (logistic_regression) {Logistic Regression};
+        \node[box, above right=of predictive_analysis, yshift=-1.1cm] (support_vector_machine) {Support Vector Machine};
+        \node[box, below right=of predictive_analysis, yshift=1.1cm] (decision_tree) {Decision Tree};
+        \node[box, below right=of predictive_analysis,] (k_nearest_neighbours) {K Nearest Neighbours};
+
+        \path[arrow] (predictive_analysis) -- (logistic_regression);
+        \path[arrow] (predictive_analysis) -- (support_vector_machine);
+        \path[arrow] (predictive_analysis) -- (decision_tree);
+        \path[arrow] (predictive_analysis) -- (k_nearest_neighbours);
+    \end{tikzpicture}
+\end{figure}
