@@ -249,19 +249,31 @@
 \end{frame}
 
 \begin{frame}{Total Payload Mass}
-
+    Total Payload Mass = 45596
+    \begin{itemize}
+        \item This is the total payload mass (sum of PAYLOAD\_MASS\_\_KG\_) for all rows in SPACEXTABLE where the Customer is exactly `NASA (CRS)'. The result is a single value labeled total\_payload\_mass
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Average Payload Mass by F9 v1.1}
-
+    Average Payload Mass = 2534.6666666666665
+    \begin{itemize}
+        \item This is the average payload mass (PAYLOAD\_MASS\_\_KG\_) over rows in SPACEXTABLE whose Booster\_Version starts with ``F9 v1.1'', returning a single value named avg\_payload\_mass
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{First Successful Ground Landing Date}
-
+    First Ground Pad Landing Success Date = 2015-12-22
+    \begin{itemize}
+        \item This is the earliest Date (minimum) among rows where Landing\_Outcome is exactly ``Success (ground pad)'', labeled first\_ground\_pad\_success\_date.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Successful Drone Ship Landing with Payload between 4000 and 60000}
-
+    \import{diagrams/}{booster_name}
+    \begin{itemize}
+        \item This are the unique booster versions (as booster\_name) that had a ``Success (drone ship)'' landing and carried payloads strictly between 4000 kg and 6000 kg, sorted alphabetically
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Total Number of Successful and Failure Mission Outcomes}
