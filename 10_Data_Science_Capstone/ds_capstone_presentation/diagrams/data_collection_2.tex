@@ -1,0 +1,22 @@
+\begin{figure}[htbp]
+    \centering
+    \captionsetup{justification = raggedright, singlelinecheck = false}
+    \label{fig:data_collection}
+    \begin{tikzpicture}[
+        node distance=12mm,
+        box/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=8mm, fill=blue!5},
+        endpoint/.style={draw, rounded corners, align=center, minimum width=5.2cm, minimum height=8mm, fill=green!8, thick},
+        arrow/.style={-latex, thick, draw=black}
+    ]
+        \node[endpoint] (api) {https://api.spacexdata.com/v4/};
+        \node[box, above right=of api] (rocket) {rocket};
+        \node[box, above right=of api, yshift=-1.1cm] (payload) {payload};
+        \node[box, below right=of api, yshift=1.1cm] (launchpad) {launchpad};
+        \node[box, below right=of api] (cores) {cores};
+
+        \path[arrow] (api) -- (rocket);
+        \path[arrow] (api) -- (payload);
+        \path[arrow] (api) -- (launchpad);
+        \path[arrow] (api) -- (cores);
+    \end{tikzpicture}
+\end{figure}

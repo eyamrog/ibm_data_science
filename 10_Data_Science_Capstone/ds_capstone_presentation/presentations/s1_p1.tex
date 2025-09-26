@@ -51,45 +51,52 @@
     \begin{itemize}
         \item SpaceX API data extraction and Wikipedia pages web scraping were combined to produce a dataset of SpaceX Falcon 9 landings information
     \end{itemize}
-    \import{diagrams/}{data_collection}
+    \import{diagrams/}{data_collection_1.tex}
 \end{frame}
 
+{\nologo
 \begin{frame}{Data Collection -- SpaceX API}
-    \begin{itemize}
-        \item From the SpaceX API endpoint \url{https://api.spacexdata.com/v4/} we probed the following data sources:
-        \begin{itemize}
-            \item rocket
-            \item payload
-            \item launchpad
-            \item cores
-        \end{itemize}
-        \item Jupyter Notebook's GitHub URL: \url{https://github.com/eyamrog/ibm_data_science/blob/main/10_Data_Science_Capstone_Lab1_Collecting_the_Data.ipynb}
-    \end{itemize}
+    \begin{columns}
+        \column{0.3\textwidth}
+            \begin{itemize}
+                \item From the SpaceX API endpoint \url{https://api.spacexdata.com/v4/} we probed the following data sources:
+                \begin{itemize}
+                    \item rocket
+                    \item payload
+                    \item launchpad
+                    \item cores
+                \end{itemize}
+                \item \href{https://github.com/eyamrog/ibm_data_science/blob/main/10_Data_Science_Capstone_Lab1_Collecting_the_Data.ipynb}{\uline{Jupyter Notebook's GitHub URL}}
+            \end{itemize}
+        \column{0.7\textwidth}
+            \import{diagrams/}{data_collection_2}
+    \end{columns}
 \end{frame}
+}
 
-\begin{frame}[t]{Data Sources Diagram}
-    \centering
-    \begin{tikzpicture}[
-        node distance=12mm,
-        box/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=8mm, fill=blue!5},
-        endpoint/.style={draw, rounded corners, align=center, minimum width=5.2cm, minimum height=8mm, fill=green!8, thick},
-        arrow/.style={-latex, thick, draw=black}
-    ]
-        \node[endpoint] (api) {https://api.spacexdata.com/v4/};
-        \node[box, above right=of api] (rocket) {rocket};
-        \node[box, above right=of api, yshift=-1.1cm] (payload) {payload};
-        \node[box, below right=of api, yshift=1.1cm] (launchpad) {launchpad};
-        \node[box, below right=of api] (cores) {cores};
-
-        \path[arrow] (api) -- (rocket);
-        \path[arrow] (api) -- (payload);
-        \path[arrow] (api) -- (launchpad);
-        \path[arrow] (api) -- (cores);
-    \end{tikzpicture}
-    \vspace{4mm}
-
-    {\small Visual summary of probed data sources from the SpaceX v4 API.}
-\end{frame}
+%\begin{frame}[t]{Data Sources Diagram}
+%    \centering
+%    \begin{tikzpicture}[
+%        node distance=12mm,
+%        box/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=8mm, fill=blue!5},
+%        endpoint/.style={draw, rounded corners, align=center, minimum width=5.2cm, minimum height=8mm, fill=green!8, thick},
+%        arrow/.style={-latex, thick, draw=black}
+%    ]
+%        \node[endpoint] (api) {https://api.spacexdata.com/v4/};
+%        \node[box, above right=of api] (rocket) {rocket};
+%        \node[box, above right=of api, yshift=-1.1cm] (payload) {payload};
+%        \node[box, below right=of api, yshift=1.1cm] (launchpad) {launchpad};
+%        \node[box, below right=of api] (cores) {cores};
+%
+%        \path[arrow] (api) -- (rocket);
+%        \path[arrow] (api) -- (payload);
+%        \path[arrow] (api) -- (launchpad);
+%        \path[arrow] (api) -- (cores);
+%    \end{tikzpicture}
+%    \vspace{4mm}
+%
+%    {\small Visual summary of probed data sources from the SpaceX v4 API.}
+%\end{frame}
 
 \begin{frame}{Data Collection -- Scraping}
     %\verb|https://api.spacexdata.com/v4/|
