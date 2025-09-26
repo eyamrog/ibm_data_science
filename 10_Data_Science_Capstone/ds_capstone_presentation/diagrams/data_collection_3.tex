@@ -1,0 +1,20 @@
+\begin{figure}[htbp]
+    \centering
+    \captionsetup{justification = raggedright, singlelinecheck = false}
+    \label{fig:data_collection}
+    \begin{tikzpicture}[
+        node distance=12mm,
+        box/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=8mm, fill=blue!5},
+        endpoint/.style={draw, rounded corners, align=center, minimum width=5.2cm, minimum height=8mm, fill=green!8, thick},
+        arrow/.style={-latex, thick, draw=black}
+    ]
+        \node[endpoint] (wikipedia) {Wikipedia Falcon 9 Heavy Launches};
+        \node[box, below=of wikipedia] (requests) {Requests};
+        \node[box, below=of requests] (beautifulsoup) {Beautiful Soup};
+        \node[box, below=of beautifulsoup] (historical_data) {Falcon 9 historical launch records};
+
+        \path[arrow] (wikipedia) -- (requests);
+        \path[arrow] (requests) -- (beautifulsoup);
+        \path[arrow] (beautifulsoup) -- (historical_data);
+    \end{tikzpicture}
+\end{figure}
