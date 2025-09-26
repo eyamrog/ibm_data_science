@@ -51,7 +51,7 @@
     \begin{itemize}
         \item SpaceX API data extraction and Wikipedia pages web scraping were combined to produce a dataset of SpaceX Falcon 9 landings information
     \end{itemize}
-    \import{diagrams/}{data_collection_1.tex}
+    \import{diagrams/}{data_collection_1}
 \end{frame}
 
 {\nologo
@@ -272,24 +272,36 @@
 \begin{frame}{Successful Drone Ship Landing with Payload between 4000 and 60000}
     \import{diagrams/}{booster_name}
     \begin{itemize}
-        \item This are the unique booster versions (as booster\_name) that had a ``Success (drone ship)'' landing and carried payloads strictly between 4000 kg and 6000 kg, sorted alphabetically
+        \item These are the unique booster versions (as booster\_name) that had a ``Success (drone ship)'' landing and carried payloads strictly between 4000 kg and 6000 kg, sorted alphabetically
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Total Number of Successful and Failure Mission Outcomes}
-
+    \import{diagrams/}{total_number_of_successful_and_failure_mission_outcomes}
+    \begin{itemize}
+        \item These are rows grouped by Mission\_Outcome, counting how many are successes or failures (strings starting with ``Success'' or ``Failure''), and returns each outcome with its count, sorted by count descending
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Boosters Carried Maximum Payload}
-
+    \import{diagrams/}{booster_version}
+    \begin{itemize}
+        \item These are the unique booster versions that carried the maximum payload mass found in the table. The subquery gets the global MAX(PAYLOAD\_MASS\_\_KG\_), and the outer query lists distinct Booster\_Version rows matching that value
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{2015 Launch Records}
-
+    \import{diagrams/}{2015_launch_records}
+    \begin{itemize}
+        \item This is a list of 2015 records where Landing\_Outcome is ``Failure (drone ship)''
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Rank Landing Outcomes Between 2010-06-04 and 2017-03-20}
-
+    \import{diagrams/}{rank_landing_outcomes}
+    \begin{itemize}
+        \item This is a calculation of how many launches fall into each Landing\_Outcome between 2010-06-04 and 2017-03-20, returning each outcome with its count, sorted by count descending
+    \end{itemize}
 \end{frame}
 
 {
