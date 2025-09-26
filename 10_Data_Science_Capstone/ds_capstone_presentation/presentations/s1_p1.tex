@@ -235,11 +235,17 @@
 \end{frame}
 
 \begin{frame}{All Launch Site Names}
-
+    \import{diagrams/}{all_launch_site_names}
+    \begin{itemize}
+        \item This is a sorted list of unique, non-null values from the Launch\_Site column in the SPACEXTABLE table
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Launch Site Names Begin with `CCA'}
-
+    \import{diagrams/}{launch_site_names_begin_with_cca}
+    \begin{itemize}
+        \item This is a set of up to 5 rows from the SPACEXTABLE table where the Launch\_Site column starts with the text ``CCA'' (e.g., ``CCAFS \dots''). The LIKE `CCA\%' filter matches any value beginning with ``CCA''
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Total Payload Mass}
