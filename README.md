@@ -2,7 +2,7 @@
 
 ## Generative AI
 
-Keeping up wit generative AI advancements
+Keeping up with generative AI advancements
 
 1. Follow top AI companies
 
